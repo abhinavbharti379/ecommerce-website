@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Online Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">
+        Shop<span>Ease</span>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for products..."
+        >
+        <button onclick="searchProducts()">🔍</button>
+    </div>
+
+    <div class="nav-actions">
+        <button class="nav-btn" onclick="toggleWishlist()">
+            ❤️ <span id="wishlistCount">0</span>
+        </button>
+
+        <button class="nav-btn cart-btn" onclick="openCart()">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-title">BIG SALE IS LIVE</p>
+
+        <h1>
+            Discover Products<br>
+            You'll <span>Love.</span>
+        </h1>
+
+        <p>
+            Shop the latest fashion, electronics and lifestyle products
+            at amazing prices.
+        </p>
+
+        <button class="shop-now" onclick="scrollToProducts()">
+            Shop Now →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section class="categories">
+
+    <h2>Shop by Category</h2>
+
+    <div class="category-container">
+
+        <button onclick="filterCategory('all')" class="category active">
+            🛍️
+            <span>All</span>
+        </button>
+
+        <button onclick="filterCategory('electronics')" class="category">
+            💻
+            <span>Electronics</span>
+        </button>
+
+        <button onclick="filterCategory('fashion')" class="category">
+            👕
+            <span>Fashion</span>
+        </button>
+
+        <button onclick="filterCategory('shoes')" class="category">
+            👟
+            <span>Shoes</span>
+        </button>
+
+        <button onclick="filterCategory('accessories')" class="category">
+            🎒
+            <span>Accessories</span>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Popular Products</h2>
+            <p>Explore our best-selling products</p>
+        </div>
+
+        <select id="sortProducts" onchange="sortProducts()">
+            <option value="default">Sort By</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+        </select>
+
+    </div>
+
+    <div class="products-grid" id="productsGrid"></div>
+
+</section>
+
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<aside class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <button onclick="closeCart()">✕</button>
+
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-footer">
+
+        <div class="subtotal">
+            <span>Subtotal</span>
+            <strong id="cartTotal">₹0</strong>
+        </div>
+
+        <button class="checkout-btn" onclick="checkout()">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+    Product added to cart!
+</div>
+
+
+<footer>
+
+    <div class="footer-logo">
+        Shop<span>Ease</span>
+    </div>
+
+    <p>©️ 2026 ShopEase. All rights reserved.</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
